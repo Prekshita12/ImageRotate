@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImageRotate</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #baffc9;
+        }
+        .bimg{
+            width: 599px;
+            height: 500px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr; 
+            border: 1px solid black;
+            box-sizing:border-box;
+            position: relative;
+            left: -190px;
+        }
+        .border{
+            border: 2px solid black;
+
+        }
+        .yellow{
+            background-color: #FAFFC7;
+        }
+        .pink{
+            background-color: #FFCCE1;
+        }
+        .purple{
+            background-color: #E0D7FF;
+        }
+        .blue{
+            background-color: #bae1ff;
+        }
+        .size{
+            position: relative;
+            top: -300px;
+            font-size: 60px;
+            left: 250px;
+            font-weight: bolder;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="size">Image Sliding</div>
+    <div class="bimg"> 
+        <div class="border  blue">
+            <img src="assets/smile3-removebg-preview.png" width="294px" height="242px">
+        </div>
+        <div class="border yellow"></div>
+        <div class="border  pink"></div>
+        <div class="border purple"></div>
+    </div>
+    <script>
+        let bimg=document.querySelector("img")
+        bimg.style.position="relative"
+         bimg.style.left="0px"
+         bimg.style.top="1.5px"
+        window.addEventListener("keydown",keypress)
+       function keypress(key){
+        if(key.keyCode=="39"){
+            bimg.style.left="300px"
+            bimg.style.transition="0.8s"
+        }
+        else if(key.keyCode=="40"){
+            bimg.style.top="252px"
+        }
+        else if(key.keyCode=="37"){
+            bimg.style.left="0px"
+        }
+        else if(key.keyCode=="38"){
+            bimg.style.top="1.5px"
+        }
+       }
+    </script>
+    
+</body>
+</html>
